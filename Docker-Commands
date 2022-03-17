@@ -1,0 +1,53 @@
+Local Machine
+------------------
+1. Check Docker Exists or not your local machine
+docker -v
+2. Build you Docker File
+- t is the tag name
+specify the docker file name
+. is used for root directory of your file system
+docker build -f Dockerfile -t docker-demo .
+3. Check the Docker Image is Created or not
+docker images
+4. Run the Docker image
+docker container run --name spring-boot-java-app -p 8081:8081 docker-demo
+
+To run detach mode
+docker container run -d --name spring-boot-java-app -p 8081:8081 docker-demo
+
+For AWS EC2
+-----------
+
+1. scp -i ubuntu-keypair.pem demo-for-docker-custom-image.zip  ubuntu@ec2-18-221-213-138.us-east-2.compute.amazonaws.com:~/.
+cp demo-for-docker-custom-image.zip /root
+sudo apt-get install zip unzip
+unzip demo-for-docker-custom-image.zip
+
+2. Build you Docker File
+- t is the tag name
+specify the docker file name
+. is used for root directory of your file system
+docker build -f Dockerfile -t docker-demo .
+3. Check the Docker Image is Created or not
+docker images
+4. Run the Docker image
+docker container run --name spring-boot-java-app -p 8081:8081 docker-demo
+
+To run detach mode
+docker container run -d --name spring-boot-java-app -p 8081:8081 docker-demo
+
+
+Docker Customer repository push and pull to local
+----------------------------------------------------
+
+1. Create a Repository followed by the tag name
+docker image tag docker-demo swagatkm/sprig-boot-repo:docker-demo
+
+2. Push the Image to Docker Hub
+ docker push swagatkm/sprig-boot-repo:docker-demo
+
+3. Pull image in EC2 local
+docker pull swagatkm/sprig-boot-repo:docker-demo
+
+
+
