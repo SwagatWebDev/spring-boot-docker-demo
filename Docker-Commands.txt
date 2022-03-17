@@ -41,13 +41,13 @@ Docker Customer repository push and pull to local
 ----------------------------------------------------
 
 1. Create a Repository followed by the tag name
-docker image tag docker-demo swagatkm/sprig-boot-repo:docker-demo
+docker image tag docker-demo swagatkm/spring-boot-repository:docker-demo
 
 2. Push the Image to Docker Hub
- docker push swagatkm/sprig-boot-repo:docker-demo
+ docker push swagatkm/spring-boot-repository:docker-demo
 
 3. Pull image in EC2 local
-docker pull swagatkm/sprig-boot-repo:docker-demo
+docker pull swagatkm/spring-boot-repository:docker-demo
 
 
 
